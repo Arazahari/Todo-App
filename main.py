@@ -2,6 +2,7 @@ from functions import get_todos, write_todos
 import time
 todos = []
 
+print('is anything good enough')
 now = time.strftime('%b %d, %Y %H:%M:%S')
 print("It is",now)
 while True:
