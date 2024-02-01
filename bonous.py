@@ -1,26 +1,17 @@
-import json
-with open('questions.json','r') as file:
-    content = file.read()
+import PySimpleGUI as sg
 
+label1 = sg.Text("Select files to compress:")
+input1 = sg.Input()
+choose_button = sg.FileBrowse("Choose")
 
-data = json.loads(content)
-print(data)
+label2 = sg.Text("Select destination folder: ")
+input2 = sg.Input()
+choose_button2 = sg.FolderBrowse("Chose")
 
-score = 0
-for question in data:
-    print(question['question_text'])
-    for index, alternative in enumerate(question['alternatives']):
-        print(index+1,"-",alternative)
-    user_choice = int(input('Enter your answer: '))
-    question["user_choice"] = user_choice
+compress_button = sg.Button("Compress")
 
-
-for index, question in enumerate(data) :
-    if question["user_choice"] == question["correct answer"]:
-        score += 1
-        result = 'correct answer'
-    else:
-        result = 'wrong answer'
-    message = f"{result} {index+1} - Your answer:{question['user_choice']}, correct answer is :{question['correct answer']}"
-    print(message)
-print('Your score:',score,"/",len(data))
+window = sg.Window("File compressor", layout=[[label1,input1,choose_button],
+                                              [label2,input2,choose_button2],
+                                              [compress_button]])
+window.read()
+window.close()
