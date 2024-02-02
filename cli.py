@@ -13,7 +13,7 @@ while True:
 
         todos.append(todo + '\n')
 
-        write_todos('todos.txt', todos)
+        write_todos('todos.txt', todos_arg)
 
     elif user_action.startswith('show'):
 
@@ -35,7 +35,7 @@ while True:
             new_todo = input('add new one')
             todos[number] = new_todo + '\n'
 
-            write_todos('todos.txt', todos)
+            write_todos('todos.txt', todos_arg)
 
         except ValueError:
             print('Your command is not valid.')
@@ -49,7 +49,7 @@ while True:
             number = number - 1
             todos = get_todos()
             todos.pop(number)
-            write_todos('todos.txt', todos)
+            write_todos('todos.txt', todos_arg)
         except IndexError:
             print('Number that you entered is not valid.')
 
