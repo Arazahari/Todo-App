@@ -1,5 +1,6 @@
 FILEPATH = 'todos.txt'
 
+
 def get_todos(filepath=FILEPATH):
     with open(filepath, 'r') as file:
         todos = file.readlines()
@@ -12,6 +13,8 @@ def write_todos(filepath, todos_arg):
 
 
 print(type(__name__))
-if __name__ == "__main__":
+if __name__ != "__main__":
+    pass
+else:
     print("Hello")
     print(get_todos())
