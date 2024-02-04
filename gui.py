@@ -6,11 +6,15 @@ sg.theme('DarkGreen6')
 clock = sg.Text("",key='clock')
 label = sg.Text("Type in a To-Do")
 input_box = sg.InputText(tooltip="Enter Todo", key="todo")
-add_button = sg.Button("Add")
+add_button = sg.Button(image_source= '004 add.png' , tooltip="Add",
+                       mouseover_colors='LightBlue2,', key='Add')
 list_box = sg.Listbox(values=functions.get_todos(), key='todos',
                       enable_events=True,
                       size=[45, 10])
-complete_button = sg.Button('Complete')
+complete_button = sg.Button(image_source='004 complete.png',
+                            tooltip='Complete',
+                            mouseover_colors='LightBlue2',
+                            key='Complete')
 edit_button = sg.Button("Edit")
 exit_button = sg.Button("Exit")
 layout = ([clock], [label], [input_box, add_button],

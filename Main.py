@@ -5,7 +5,7 @@ todos = []
 now = time.strftime('%b %d, %Y %H:%M:%S')
 print("It is",now)
 while True:
-    user_action = input('Enter add, show, edit,complete or exit:').strip()
+    user_action = input('Enter add, show, edit,complete or exit:').strip()0-
     if user_action.startswith('add'):
         todo = user_action[4:]
 
